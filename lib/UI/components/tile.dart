@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../constants/constants.dart';
 
 class LaysTile extends StatelessWidget {
@@ -14,6 +13,8 @@ class LaysTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return Container(
       margin: const EdgeInsets.only(
         bottom: 28,
@@ -44,7 +45,7 @@ class LaysTile extends StatelessWidget {
                   mainTitle,
                   style: TextStyle(
                     color: white,
-                    fontSize: MediaQuery.of(context).textScaleFactor * 30,
+                    fontSize: width * 0.022,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 2,
                   ),
@@ -56,7 +57,7 @@ class LaysTile extends StatelessWidget {
                   subTitle,
                   style: TextStyle(
                     color: white,
-                    fontSize: MediaQuery.of(context).textScaleFactor * 20,
+                    fontSize: width * 0.011,
                     fontWeight: FontWeight.w500,
                     letterSpacing: 2,
                   ),
@@ -76,8 +77,9 @@ class LaysTile extends StatelessWidget {
                         onPressed: () => {},
                         child: Text(
                           tileButtonLabels[0],
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: black,
+                            fontSize: width * 0.01,
                             fontWeight: FontWeight.w800,
                           ),
                         ),
@@ -96,6 +98,9 @@ class LaysTile extends StatelessWidget {
                         onPressed: () => {},
                         child: Text(
                           tileButtonLabels[1],
+                          style: TextStyle(
+                            fontSize: width * 0.01,
+                          ),
                         ),
                       ),
                     ],

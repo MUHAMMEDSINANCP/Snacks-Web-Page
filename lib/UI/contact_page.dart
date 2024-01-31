@@ -8,6 +8,8 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: darkBlue,
       body: Container(
@@ -24,12 +26,37 @@ class ContactPage extends StatelessWidget {
             strokeAlign: BorderSide.strokeAlignOutside,
           ),
         ),
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Header(
+            const Header(
               currentPageId: id,
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.9,
+              height: MediaQuery.of(context).size.height * 0.7,
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+                border: Border.all(
+                  color: borderBlue,
+                  width: 2,
+                  strokeAlign: BorderSide.strokeAlignOutside,
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  contactPageText,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: white,
+                    fontSize: width * 0.015,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),

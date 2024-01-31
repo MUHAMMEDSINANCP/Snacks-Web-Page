@@ -34,27 +34,19 @@ class HomePage extends StatelessWidget {
             ),
             Expanded(
               child: SizedBox(
-                // color: Colors.yellow,
-                height: MediaQuery.of(context).size.height * 0.78,
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      LaysTile(
-                        mainTitle: laysFlavours[0],
-                        subTitle: laysFlavoursSubtitle[0],
-                        imgPath: laysFlavoursImages[0],
-                      ),
-                      LaysTile(
-                        mainTitle: laysFlavours[1],
-                        subTitle: laysFlavoursSubtitle[1],
-                        imgPath: laysFlavoursImages[1],
-                      ),
-                      // LaysTile(title: "LAYS 1"),
-                    ],
-                  ),
-                ),
-              ),
+                  // color: Colors.yellow,
+                  height: MediaQuery.of(context).size.height * 0.78,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: ListView.builder(
+                    itemCount: laysFlavours.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return LaysTile(
+                        mainTitle: laysFlavours[index],
+                        subTitle: laysFlavoursSubtitle[index],
+                        imgPath: laysFlavoursImages[index],
+                      );
+                    },
+                  )),
             ),
             // Container(
             //   height: MediaQuery.of(context).size.height * 0.28,

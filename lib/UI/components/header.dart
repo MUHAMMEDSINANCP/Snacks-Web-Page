@@ -24,6 +24,8 @@ class _HeaderState extends State<Header> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return Container(
       width: MediaQuery.of(context).size.width * 0.9,
       color: darkBlue,
@@ -38,7 +40,7 @@ class _HeaderState extends State<Header> {
             lays,
             style: TextStyle(
               color: Colors.white,
-              fontSize: MediaQuery.of(context).textScaleFactor * 43,
+              fontSize: width * 0.045,
               fontFamily: "Pacifico",
             ),
           ),
@@ -55,11 +57,14 @@ class _HeaderState extends State<Header> {
                             backgroundColor: fillButtonBg, elevation: 0),
                         onPressed: () =>
                             {Navigator.popAndPushNamed(context, '/')},
-                        child: Text(
-                          navBarLabels[0],
-                          style: const TextStyle(
-                            color: black,
-                            fontWeight: FontWeight.w600,
+                        child: Flexible(
+                          child: Text(
+                            navBarLabels[0],
+                            style: TextStyle(
+                              color: black,
+                              fontSize: width * 0.012,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       )
@@ -73,8 +78,13 @@ class _HeaderState extends State<Header> {
                         ),
                         onPressed: () =>
                             {Navigator.of(context).popAndPushNamed("/")},
-                        child: Text(
-                          navBarLabels[0],
+                        child: Expanded(
+                          child: Text(
+                            navBarLabels[0],
+                            style: TextStyle(
+                              fontSize: width * 0.012,
+                            ),
+                          ),
                         ),
                       ),
                 const SizedBox(
@@ -89,7 +99,8 @@ class _HeaderState extends State<Header> {
                         },
                         child: Text(
                           navBarLabels[1],
-                          style: const TextStyle(
+                          style: TextStyle(
+                            fontSize: width * 0.012,
                             color: black,
                             fontWeight: FontWeight.w600,
                           ),
@@ -108,6 +119,9 @@ class _HeaderState extends State<Header> {
                         },
                         child: Text(
                           navBarLabels[1],
+                          style: TextStyle(
+                            fontSize: width * 0.012,
+                          ),
                         ),
                       ),
                 const SizedBox(
@@ -122,9 +136,10 @@ class _HeaderState extends State<Header> {
                         },
                         child: Text(
                           navBarLabels[2],
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: black,
                             fontWeight: FontWeight.w600,
+                            fontSize: width * 0.012,
                           ),
                         ),
                       )
@@ -141,6 +156,9 @@ class _HeaderState extends State<Header> {
                         },
                         child: Text(
                           navBarLabels[2],
+                          style: TextStyle(
+                            fontSize: width * 0.012,
+                          ),
                         ),
                       ),
               ],

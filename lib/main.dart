@@ -5,7 +5,7 @@ import 'UI/contact_page.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    MaterialApp(      
       debugShowCheckedModeBanner: false,
       routes: {
         "/": (context) => const HomePage(),
@@ -15,3 +15,4 @@ void main() {
     ),
   );
 }
+        

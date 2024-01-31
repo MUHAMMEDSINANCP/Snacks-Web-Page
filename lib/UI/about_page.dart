@@ -8,6 +8,8 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: darkBlue,
       body: Container(
@@ -44,11 +46,14 @@ class AboutPage extends StatelessWidget {
                   strokeAlign: BorderSide.strokeAlignOutside,
                 ),
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
                   aboutPageText,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: white, fontSize: 50),
+                  style: TextStyle(
+                    color: white,
+                    fontSize: width * 0.015,
+                  ),
                 ),
               ),
             )
